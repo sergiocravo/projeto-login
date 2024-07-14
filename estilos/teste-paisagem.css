@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+/*
+    Paleta de Cores:
+    Verde: #49a09d
+    Azul: #2364AA
+*/
+
+@media screen and (min-width:768px) {
+    
+
+
+body{
+    background-image: linear-gradient(to bottom, #2364AA, #49a09d);
+
+}
+
+section#login{
+    width: 500px;
+}
+}
