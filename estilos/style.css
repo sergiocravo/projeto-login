@@ -29,7 +29,6 @@ section#login{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     overflow: hidden; /*Tudo oq estiver fora da borda vai ficar escondido*/
 
     background-color: white;
@@ -37,10 +36,11 @@ section#login{
     height: 515px;
     border-radius: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.452); /*0px e 0px pra deixar a sombra sem deslocamento, deixar a sombra de todos os lados.*/
-
+    transform: translate(-50%, -50%);
     transition: width .3s, height .3s; /*Animação da transição do aumento e da diminuição da tela*/
     transition-timing-function: ease; /*Suavizar a animação*/
 
+    /*Sempre que você tiver uma animação ou transformação para fazer, faça como ultima linha de seu seletor, para que não tenha problemas de bug*/
 }
 
 section#login > div#imagem{
@@ -67,16 +67,41 @@ div#formulario > p{
 
 form > div.campo{
     background-color: #2364AA;
+    border: 2px solid #2364AA;
     display: block;
     height: 40px;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 8px;
     margin: 5px 0px;
 }
 
 div.campo > label{
     display: none;
 }
+
+div.campo > span{
+    color: white;
+    /*background-color: black;*/
+    font-size: 2em;
+    width: 40px;
+    padding: 5px;
+}
+
+div.campo > input{
+    background-color:#6bccc9;
+    font-size: 1em;
+    width: calc(100% - 45px); /*Comando para calcular o tamanho correto da caixa input, para que encaixe dentro da DIV.CAMPO e fique ao lado do icone*/
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+    transform: translateY(-12px); /*Movimentar a caixa do input no eixo Y, ou seja para cima ou para baixo*/
+
+    /*Sempre que você tiver uma animação ou transformação para fazer, faça como ultima linha de seu seletor, para que não tenha problemas de bug*/
+}
+
+div.campo > input:focus-within{
+    background-color: white; 
+}/*Comando para fazer a caixa do input ficar branca quando clicar dentro dela*/
 
 form > input[type=submit]{
     display: block;
